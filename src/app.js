@@ -10,6 +10,7 @@ const countClicks = () => {
 
 const play = () => {
   buttonClick.removeAttribute('disabled');
+  
 };
 
 const pause = () => {
@@ -17,6 +18,15 @@ const pause = () => {
 }
 
 const clickMe = () => {
-  countClicks();
-  clicks.innerHTML = `${initialClick}/${maxClicks} clicked`;
+    const move_y = Math.random() * 350
+    const move_x = Math.random() * 400
+    buttonClick.style.transform = `translate(${move_x}px, ${move_y}px)`
+    if (initialClick === maxClicks) {
+      window.alert('Ganaste');
+      document.location.reload();
+    }
+    countClicks();
+    clicks.innerHTML = `${initialClick}/${maxClicks} clicked`;
 };
+
+
