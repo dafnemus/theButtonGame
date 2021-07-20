@@ -12,14 +12,16 @@ const countClicks = () => {
 
 const play = () => {
   buttonClick.removeAttribute('disabled');
-  discountTime(time)
+  discountTime()
+  timer.innerHTML = `00:${time}`
 };
 
 const pause = () => {
   buttonClick.setAttribute('disabled', true);
 };
 
-const discountTime = (time) => {
+
+const discountTime = () => {
   return (time -= 1);
 };
 
