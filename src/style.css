@@ -86,13 +86,6 @@ main {
   border: 1px solid var(--gray);
   overflow: hidden;
   position: relative;
-  background: linear-gradient(
-    to right,
-    var(--green) 0%,
-    var(--green) 20%,
-    #fff 20%,
-    #fff 100%
-  );
 }
 
 .controls__button-wrapper {
@@ -114,18 +107,14 @@ main {
 
 /* Game panel */
 .game-area {
-  flex: 1 0 65%;
+  width: 800px;
   border: 0.25em dashed var(--gray);
-  height: 60vh;
-  min-height: 450px;
-  position: relative;
+  height: 450px;
 }
 .game-area button {
-  position: absolute;
+  position: relative;
   border: 0.2em solid var(--red);
   font-weight: bold;
-  top: 43%;
-  left: 43%;
   font-size: 1.5em;
 }
 .game-area button:hover {
