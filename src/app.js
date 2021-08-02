@@ -2,15 +2,15 @@ const clicks = document.getElementById('clicks');
 const timer = document.getElementById('timer');
 const buttonClick = document.getElementById('buttonClick');
 const progress = document.getElementById('progress');
-const maxClicks = 5;
-let initialClick = 0;
+const MAX_CLICKS = 5;
+let pressedClicks = 0;
 let time = 30;
 let timerId;
 
-const countClicks = () => initialClick += 1
+const countClicks = () => (pressedClicks += 1);
 
 const discountTime = () => {
-  if (time === 0 && initialClick < maxClicks) {
+  if (time === 0 && pressedClicks < MAX_CLICKS) {
     perder();
   }
   time--;
@@ -19,23 +19,23 @@ const discountTime = () => {
 
 const play = () => {
   buttonClick.removeAttribute('disabled');
-  timerId = setInterval(discountTime, 1000)
+  timerId = setInterval(discountTime, 1000);
 };
 
 const pause = () => {
   buttonClick.setAttribute('disabled', true);
-  timerId = clearInterval(timerId)
+  clearInterval(timerId);
 };
 
 const clickMe = () => {
-  if (initialClick === maxClicks) {
+  if (pressedClicks === MAX_CLICKS) {
     ganar();
   }
-  console.log(initialClick)
+  console.log(pressedClicks);
   getProgress();
   countClicks();
   moveButton();
-  clicks.innerHTML = `${initialClick}/${maxClicks} clicked`;
+  clicks.innerHTML = `${pressedClicks}/${MAX_CLICKS} clicked`;
 };
 
 const ganar = () => {
@@ -58,7 +58,7 @@ const getProgress = () => {
   progress.style.background = `linear-gradient(
     to right,
     var(--green) 0%,
-    var(--green) calc(20% * ${initialClick + 1}),
+    var(--green) calc(20% * ${pressedClicks + 1}),
     #fff 20%,
     #fff 100%
   )`;
