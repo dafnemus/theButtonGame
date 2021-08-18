@@ -27,17 +27,17 @@
     </header>
     <main>
         <div class="controls">
-            <div class="progress">
-                <span>0/5 clicked</span>
+            <div id="progress" class="progress">
+                <span id="clicks">0/5 clicked</span>
             </div>
             <div class="controls__button-wrapper">
-                <button>Play </button>
-                <button>Pause </button>
+                <button id="play" onclick="play()">Play </button>
+                <button id="pause" onclick="pause()">Pause </button>
             </div>
-            <p class="controls__timer">00:30</p>
+            <p id="timer" class="controls__timer">00:30</p>
         </div>
         <div class="game-area">
-            <button> Click me</button>
+            <button id="buttonClick" onclick="clickMe()" disabled> Click me</button>
         </div>
     </main>
     <footer>
@@ -45,4 +45,5 @@
     </footer>
 </body>
 <script src="src/app.js"></script>
+
 </html>
